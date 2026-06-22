@@ -1,0 +1,44 @@
+E-commerce Search System
+
+*Algorithms Used*
+
+1. Linear Search
+-Linear Search checks each product one by one until the required product is found.
+
+-Example:
+    Laptop → Mouse → Keyboard → Mobile
+
+*Time Complexity Analysis*
+
+Best Case: O(1) [The product is found at the first position]
+
+Average Case: O(n) [The product is found after checking some elements]
+
+Worst Case: O(n) [The product is at the end or not present, so all elements are checked]
+
+
+2. Binary Search
+-Binary Search works on a sorted array and repeatedly divides the search space into half.
+
+-Example:
+    [Keyboard, Laptop, Mobile, Mouse]
+
+*Time Complexity Analysis*
+
+Best Case: O(1) [The middle element is the required product]
+
+Average Case: O(log n) [The search space is reduced by half each time]
+
+Worst Case: O(log n) [The product is found after multiple divisions]
+
+
+*Suitable Algorithm for E-commerce Platform*
+
+Binary Search is more suitable because e-commerce platforms contain a large number
+of products. Since binary search reduces the search space by half in each step, it
+provides faster searching compared to linear search.
+
+*How to run*
+
+Compile the files -> javac *.java
+Run -> java Main

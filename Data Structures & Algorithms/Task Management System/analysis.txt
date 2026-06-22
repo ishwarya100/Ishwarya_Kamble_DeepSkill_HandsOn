@@ -1,0 +1,58 @@
+Task Management System
+
+*Data Structure Used*
+
+Singly Linked List
+
+-Stores tasks as nodes.
+-Each node contains task details and a reference to the next node.
+
+Example:
+    Task1 → Task2 → Task3
+
+*Types of Linked Lists* 
+
+1. Singly Linked List
+    -Each node contains data and a pointer/reference to the next node.
+    -Traversal is possible only in one direction.
+
+2. Doubly Linked List
+    -Each node contains data and two references:
+    one for previous node and one for next node.
+    -Traversal is possible in both directions.
+
+*Operations and Time Complexity*
+
+1. Add Task
+
+    Best Case: O(1)
+    Average Case: O(n)
+    Worst Case: O(n)
+
+2. Search Task
+
+    Best Case: O(1)
+    Average Case: O(n)
+    Worst Case: O(n)
+
+3. Traverse Tasks
+
+    Best Case: O(n)
+    Average Case: O(n)
+    Worst Case: O(n)
+
+4. Delete Task
+
+    Best Case: O(1)
+    Average Case: O(n)
+    Worst Case: O(n)
+
+*Advantages of Linked List*
+
+-Dynamic size.
+-Efficient insertion and deletion.
+
+*How to Run*
+
+Compile: javac *.java
+Run: Java Main

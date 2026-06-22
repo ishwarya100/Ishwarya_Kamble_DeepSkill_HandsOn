@@ -1,0 +1,45 @@
+Library Management System
+
+*Search Algorithms Used*
+
+1. Linear Search
+    -Checks each book one by one until the required book is found.
+
+Example:
+    C Programming → Data Structures → Java Programming → Python Basics
+
+Time Complexity
+    Best Case: O(1)
+    Average Case: O(n)
+    Worst Case: O(n)
+
+2. Binary Search
+    -Works on a sorted list and repeatedly divides the search space into half.
+
+Example:
+    [C Programming, Data Structures, Java Programming, Python Basics]
+
+Time Complexity
+    Best Case: O(1)
+    Average Case: O(log n)
+    Worst Case: O(log n)
+
+*Comparison*
+
+-Linear Search is simple and works on both sorted and unsorted data.
+-Binary Search is faster but requires sorted data.
+
+*When to Use*
+
+Linear Search:
+    -Small datasets.
+    -Unsorted data.
+
+Binary Search:
+    -Large datasets.
+    -Sorted data.
+
+*How to Run*
+
+Compile: javac *.java
+Run: java Main

@@ -1,0 +1,42 @@
+Inventory Management System
+
+*Data Structure Used*
+
+HashMap<Integer, Product>
+
+-HashMap stores products using: Product ID → Product Object
+
+-Example:
+    101 → Laptop
+    102 → Mouse
+    103 → Keyboard
+
+*Time Complexity Analysis*
+
+1. Add Product: inventory.put(product.productId, product);
+
+    Complexity:
+    Average Case: O(1)  [HashMap directly stores the product using the key.]
+    Worst Case: O(n)  [Due to hash collisions requiring traversal of multiple entries]
+
+2. Update Product: inventory.get(productId);
+
+    Complexity:
+    Average Case: O(1) [The product is accessed using productId and updated directly]
+    Worst Case: O(n) [due to hash collisions]
+
+3. Delete Product: inventory.remove(productId);
+
+    Complexity:
+    Average Case: O(1) [HashMap finds the product using its key and removes it]
+    Worst Case: O(n) [due to hash collisions]
+
+4. Display Products: for(Product p : inventory.values())
+
+    Complexity:
+    O(n)  [Every product must be visited to display all inventory items]
+    
+*How to run*
+
+Compile the files -> javac *.java
+Run ->java Main

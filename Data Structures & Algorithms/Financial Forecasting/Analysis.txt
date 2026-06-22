@@ -1,0 +1,32 @@
+Financial Forecasting
+
+*Algorithm Used*
+
+Recursion
+    -Recursion is a technique where a method calls itself.
+    -It helps solve problems by breaking them into smaller subproblems.
+
+Example:
+    forecast(10000, 10%, 3)
+    → forecast(11000, 10%, 2)
+    → forecast(12100, 10%, 1)
+    → forecast(13310, 10%, 0)
+    → Return 13310
+
+*Time Complexity*
+
+    Best Case: O(n) [Small forecasting period]
+    Average Case: O(n) [Typical forecasting period]
+    Worst Case: O(n) [Large forecasting period]
+    where n = number of years
+
+*Optimization*
+
+-Recursive solutions use additional stack memory.
+-For large values of n, an iterative approach is more efficient.
+-Memoization can also be used to avoid repeated calculations.
+
+*How to Run*
+
+Compile: javac Main.java
+Run: java Main

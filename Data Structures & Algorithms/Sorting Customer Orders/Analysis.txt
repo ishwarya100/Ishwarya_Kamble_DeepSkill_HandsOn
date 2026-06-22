@@ -1,0 +1,44 @@
+*Sorting Algorithms*
+
+1. Bubble Sort:
+Bubble Sort repeatedly compares adjacent elements and swaps them if they are in the wrong order.
+It is simple but inefficient for large datasets.
+
+Time Complexity:
+Best Case: O(n)
+Average Case: O(n²)
+Worst Case: O(n²)
+
+
+2. Insertion Sort:
+Insertion Sort builds the sorted array one element at a time by inserting elements into their correct position.
+
+Time Complexity:
+Best Case: O(n)
+Average Case: O(n²)
+Worst Case: O(n²)
+
+
+3. Quick Sort:
+Quick Sort selects a pivot element and divides the array into smaller parts.
+It recursively sorts the left and right parts.
+
+Time Complexity:
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n²)
+
+
+4. Merge Sort:
+Merge Sort divides the array into halves, sorts them, and merges them back.
+
+Time Complexity:
+Best Case: O(n log n)
+Average Case: O(n log n)
+Worst Case: O(n log n)
+
+*Comparision*
+
+Bubble Sort is easy to implement but performs poorly for large data because it requires many comparisons and swaps.
+
+Quick Sort is generally preferred because it has better average performance and sorts large datasets faster.

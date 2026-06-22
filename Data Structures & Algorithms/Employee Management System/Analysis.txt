@@ -1,0 +1,93 @@
+Employee Management System
+
+*Data Structure Used*
+
+Array
+
+-Array is used to store employee records in a continuous memory location.
+-It stores multiple employee objects and allows accessing them using index positions.
+
+-Example:
+    Employee1 → Employee2 → Employee3
+
+
+*Operations Implemented*
+
+1. Add Employee
+-Add operation inserts a new employee record into the array.
+
+*Time Complexity Analysis*
+
+Best Case: O(1) [Employee is added directly at the next available index]
+
+Average Case: O(1) [No searching or shifting is required]
+
+Worst Case: O(1) [Insertion happens at the end of the array]
+
+
+2. Search Employee
+-Search operation checks employee records one by one using employee ID until the required employee is found.
+
+-Example:
+    101 → 102 → 103 → 104
+
+*Time Complexity Analysis*
+
+Best Case: O(1) [Employee is found at the first position]
+
+Average Case: O(n) [Employee is found after checking some records]
+
+Worst Case: O(n) [Employee is at the end or not present, so all records are checked]
+
+
+3. Traverse Employees
+-Traverse operation displays all employee records stored in the array.
+
+-Example:
+    Employee1
+    Employee2
+    Employee3
+
+*Time Complexity Analysis*
+
+Best Case: O(n) [All employee records must be displayed]
+
+Average Case: O(n) [Every employee record is visited]
+
+Worst Case: O(n) [All records need to be checked]
+
+
+4. Delete Employee
+-Delete operation removes an employee record from the array.
+-After deletion, remaining elements are shifted to fill the empty position.
+
+-Example:
+Before:
+    101 → 102 → 103
+
+Delete 102:
+After:
+    101 → 103
+
+*Time Complexity Analysis*
+
+Best Case: O(1) [Last employee is deleted without shifting]
+
+Average Case: O(n) [Some elements need to be shifted]
+
+Worst Case: O(n) [First employee is deleted, so maximum shifting is required]
+
+
+*Suitable Data Structure for Employee Management System*
+
+Array is suitable for storing employee records when the number of employees is fixed
+and fast access is required.
+
+For large companies with frequently changing employee records, dynamic data structures
+like ArrayList, HashMap, or databases are more suitable.
+
+
+*How to run*
+
+Compile the files -> javac *.java
+Run -> java Main

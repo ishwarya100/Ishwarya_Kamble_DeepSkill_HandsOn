@@ -1,0 +1,39 @@
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.array-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.array-row input {
+  flex: 1;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.add-course-btn {
+  margin-top: 4px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.form-subtitle {
+  margin: -8px 0 18px;
+}
+
+form.card {
+  max-width: 480px;
+}

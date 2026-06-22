@@ -1,0 +1,13 @@
+.form-subtitle {
+  margin: -4px 0 18px;
+}
+
+.auth-card {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.auth-switch {
+  text-align: center;
+  margin: 16px 0 0;
+}

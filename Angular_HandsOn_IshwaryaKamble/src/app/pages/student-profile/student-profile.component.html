@@ -1,0 +1,24 @@
+<h2 class="section-title"><app-icon name="user" className="icon icon-lg"></app-icon>Student Profile</h2>
+
+<div class="card profile-card" *ngIf="currentUser$ | async as student">
+  <div class="avatar"><app-icon name="user" className="icon-lg"></app-icon></div>
+  <div class="profile-fields">
+    <p><app-icon name="user" className="icon-sm"></app-icon><strong>Name:</strong> {{ student.name }}</p>
+    <p><app-icon name="mail" className="icon-sm"></app-icon><strong>Email:</strong> {{ student.email }}</p>
+    <p><app-icon name="award" className="icon-sm"></app-icon><strong>GPA:</strong> {{ student.gpa }}</p>
+  </div>
+</div>
+
+<h3 class="section-title"><app-icon name="book" className="icon icon-lg"></app-icon>Enrolled Courses</h3>
+<div class="card empty-state" *ngIf="(enrolledCourses$ | async)?.length === 0">
+  <app-icon name="book" className="icon-lg"></app-icon>
+  <p class="muted-text">You have not enrolled in any courses yet.</p>
+</div>
+
+<div class="enrolled-list">
+  <div class="card enrolled-item" *ngFor="let course of (enrolledCourses$ | async)">
+    <div class="enrolled-icon"><app-icon [name]="course.icon" className="icon-sm"></app-icon></div>
+    <span>{{ course.name }}</span>
+    <span class="muted-text">{{ course.code }}</span>
+  </div>
+</div>

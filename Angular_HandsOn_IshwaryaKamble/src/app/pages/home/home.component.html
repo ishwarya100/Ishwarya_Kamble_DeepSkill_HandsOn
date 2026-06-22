@@ -1,0 +1,51 @@
+<section class="hero">
+  <div class="hero-text">
+    <span class="eyebrow" *ngIf="currentUser$ | async as user; else guestEyebrow">
+      <app-icon name="sparkle" className="icon-sm"></app-icon>Welcome back {{ user.name }}! {{ genderEmoji(user.gender) }}
+    </span>
+    <ng-template #guestEyebrow>
+      <span class="eyebrow"><app-icon name="sparkle" className="icon-sm"></app-icon>Welcome</span>
+    </ng-template>
+    <h1>{{ portalName }}</h1>
+    <p class="muted-text">Browse courses, track grades, and manage your enrollments in one place.</p>
+    <div class="hero-actions">
+      <button class="btn btn-accent" [disabled]="!isPortalActive" (click)="onEnrollClick()">
+        <app-icon name="plus" className="icon-sm"></app-icon>Enroll Now
+      </button>
+      <a routerLink="/courses" class="btn btn-outline">
+        <app-icon name="book" className="icon-sm"></app-icon>Browse Courses
+      </a>
+    </div>
+    <p *ngIf="message" class="success-banner"><app-icon name="check" className="icon-sm"></app-icon>{{ message }}</p>
+  </div>
+  <div class="hero-art">
+    <app-hero-illustration></app-hero-illustration>
+  </div>
+</section>
+
+<div class="stats-row">
+  <div class="card stat-card">
+    <div class="stat-icon"><app-icon name="book" className="icon-lg"></app-icon></div>
+    <span class="stat-value">{{ coursesAvailable }}</span>
+    <span class="muted-text">Courses Available</span>
+  </div>
+  <div class="card stat-card">
+    <div class="stat-icon"><app-icon name="award" className="icon-lg"></app-icon></div>
+    <span class="stat-value">3</span>
+    <span class="muted-text">Enrolled</span>
+  </div>
+  <div class="card stat-card">
+    <div class="stat-icon"><app-icon name="star" className="icon-lg"></app-icon></div>
+    <span class="stat-value">3.8</span>
+    <span class="muted-text">GPA</span>
+  </div>
+</div>
+
+<div class="card action-card">
+  <!-- two way binding keeps the input and searchTerm in sync -->
+  <div class="field-group search-field">
+    <label><app-icon name="search" className="icon-sm"></app-icon>Search Courses</label>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Type a course name" />
+    <p class="muted-text">Searching for: {{ searchTerm }}</p>
+  </div>
+</div>

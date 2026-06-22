@@ -1,0 +1,38 @@
+<nav class="navbar">
+  <a routerLink="/" class="brand">
+    <span class="brand-mark"><app-icon name="graduation" className="icon-lg"></app-icon></span>
+    {{ portalName }}
+  </a>
+  <div class="nav-links">
+    <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+      <app-icon name="home" className="icon-sm"></app-icon>Home
+    </a>
+    <a routerLink="/courses" routerLinkActive="active-link">
+      <app-icon name="book" className="icon-sm"></app-icon>Courses
+    </a>
+    <a routerLink="/profile" routerLinkActive="active-link">
+      <app-icon name="user" className="icon-sm"></app-icon>Profile
+    </a>
+    <a routerLink="/enroll" routerLinkActive="active-link">
+      <app-icon name="clipboard" className="icon-sm"></app-icon>Enroll
+    </a>
+    <a routerLink="/enroll/reactive" routerLinkActive="active-link">
+      <app-icon name="sparkle" className="icon-sm"></app-icon>Enroll Reactive
+    </a>
+
+    <ng-container *ngIf="authService.currentUser$ | async as user; else loggedOut">
+      <span class="nav-user"><app-icon name="user" className="icon-sm"></app-icon>{{ user.name }}</span>
+      <button class="nav-logout" (click)="onLogout()">
+        <app-icon name="x" className="icon-sm"></app-icon>Logout
+      </button>
+    </ng-container>
+    <ng-template #loggedOut>
+      <a routerLink="/login" routerLinkActive="active-link">
+        <app-icon name="user" className="icon-sm"></app-icon>Login
+      </a>
+      <a routerLink="/register" routerLinkActive="active-link">
+        <app-icon name="plus" className="icon-sm"></app-icon>Register
+      </a>
+    </ng-template>
+  </div>
+</nav>

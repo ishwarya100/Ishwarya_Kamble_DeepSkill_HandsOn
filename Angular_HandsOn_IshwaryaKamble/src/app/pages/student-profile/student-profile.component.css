@@ -1,0 +1,65 @@
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-lavender);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-fields p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.enrolled-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.enrolled-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.enrolled-item span:nth-of-type(1) {
+  flex: 1;
+  font-weight: 600;
+  color: var(--color-lavender-dark);
+}
+
+.enrolled-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--color-rose-light);
+  color: var(--color-rose-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 32px 20px;
+  color: var(--color-lavender);
+  text-align: center;
+}

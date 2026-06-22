@@ -1,0 +1,40 @@
+<h2 class="section-title"><app-icon name="user" className="icon icon-lg"></app-icon>Log In</h2>
+<p class="muted-text form-subtitle">Welcome back, log in to access your profile and courses.</p>
+
+<p class="info-banner" *ngIf="redirectedMessage">
+  <app-icon name="warning" className="icon-sm"></app-icon>{{ redirectedMessage }}
+</p>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="card auth-card">
+
+  <div class="field-group">
+    <label><app-icon name="mail" className="icon-sm"></app-icon>Email</label>
+    <input formControlName="email" type="email" placeholder="you@college.edu" />
+    <span class="error-text" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']">
+      <app-icon name="warning" className="icon-sm"></app-icon>Email is required
+    </span>
+    <span class="error-text" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']">
+      <app-icon name="warning" className="icon-sm"></app-icon>Enter a valid email
+    </span>
+  </div>
+
+  <div class="field-group">
+    <label><app-icon name="clipboard" className="icon-sm"></app-icon>Password</label>
+    <input formControlName="password" type="password" placeholder="Your password" />
+    <span class="error-text" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']">
+      <app-icon name="warning" className="icon-sm"></app-icon>Password is required
+    </span>
+  </div>
+
+  <p class="error-text" *ngIf="serverError">
+    <app-icon name="warning" className="icon-sm"></app-icon>{{ serverError }}
+  </p>
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-accent">
+      <app-icon name="check" className="icon-sm"></app-icon>Log In
+    </button>
+  </div>
+
+  <p class="muted-text auth-switch">New here? <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl !== '/' ? returnUrl : null }">Create an account</a></p>
+</form>

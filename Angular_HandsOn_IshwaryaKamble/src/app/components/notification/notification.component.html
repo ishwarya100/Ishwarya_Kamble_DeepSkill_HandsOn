@@ -1,0 +1,12 @@
+<!-- global loading spinner, driven by the loading interceptor -->
+<div class="spinner-bar" *ngIf="isLoading$ | async"></div>
+
+<div class="notification-list" *ngIf="(notifications$ | async)?.length">
+  <div class="notification-item" *ngFor="let note of (notifications$ | async)" [ngClass]="'note--' + note.type">
+    <app-icon [name]="iconFor(note.type)" className="icon-sm"></app-icon>
+    <span class="note-message">{{ note.message }}</span>
+    <button (click)="dismiss(note.id)" class="dismiss-btn">
+      <app-icon name="x" className="icon-sm"></app-icon>
+    </button>
+  </div>
+</div>

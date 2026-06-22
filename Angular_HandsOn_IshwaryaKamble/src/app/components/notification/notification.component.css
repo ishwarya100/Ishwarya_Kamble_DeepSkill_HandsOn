@@ -1,0 +1,60 @@
+.spinner-bar {
+  height: 3px;
+  background: var(--color-rose);
+  background-image: linear-gradient(90deg, var(--color-rose), var(--color-lavender));
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 24px 0;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  box-shadow: var(--shadow-sm);
+}
+
+.note-message {
+  flex: 1;
+}
+
+.note--info {
+  background: #ece6f4;
+  color: var(--color-lavender-dark);
+}
+
+.note--success {
+  background: #e6f0e3;
+  color: var(--color-success);
+}
+
+.note--error {
+  background: var(--color-rose-light);
+  color: var(--color-rose-dark);
+}
+
+.dismiss-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}

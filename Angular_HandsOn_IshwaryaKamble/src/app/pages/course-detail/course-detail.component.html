@@ -1,0 +1,12 @@
+<div class="card detail-card" *ngIf="course">
+  <div class="detail-icon"><app-icon [name]="course.icon" className="icon-lg"></app-icon></div>
+  <h2 class="section-title">{{ course.name }}</h2>
+  <p><app-icon name="clipboard" className="icon-sm"></app-icon><strong>Code:</strong> {{ course.code }}</p>
+  <p><app-icon name="layers" className="icon-sm"></app-icon><strong>Credits:</strong> {{ course.credits }}</p>
+  <p><app-icon name="star" className="icon-sm"></app-icon><strong>Grade Status:</strong> {{ course.gradeStatus }}</p>
+  <a routerLink="/courses" class="btn btn-outline">
+    <app-icon name="arrowLeft" className="icon-sm"></app-icon>Back to Courses
+  </a>
+</div>
+
+<p *ngIf="!course" class="muted-text">Loading course details...</p>

@@ -1,0 +1,40 @@
+<div class="card course-card" [ngClass]="cardClasses" [ngStyle]="borderStyle" appHighlight="#f3d9e4">
+  <div class="course-card-head">
+    <div class="course-icon-wrap">
+      <app-icon [name]="course.icon" className="icon-lg"></app-icon>
+    </div>
+    <div>
+      <h3>{{ course.name }}</h3>
+      <p class="muted-text">{{ course.code }} &middot; {{ course.credits | creditLabel }}</p>
+    </div>
+  </div>
+
+  <!-- badge rendered based on grade status -->
+  <div [ngSwitch]="course.gradeStatus" class="badge-row">
+    <span *ngSwitchCase="'passed'" class="badge badge--passed">
+      <app-icon name="check" className="icon-sm"></app-icon>Passed
+    </span>
+    <span *ngSwitchCase="'failed'" class="badge badge--failed">
+      <app-icon name="x" className="icon-sm"></app-icon>Failed
+    </span>
+    <span *ngSwitchCase="'pending'" class="badge badge--pending">
+      <app-icon name="clipboard" className="icon-sm"></app-icon>Pending
+    </span>
+  </div>
+
+  <div class="card-actions">
+    <button class="btn btn-accent" (click)="onEnrollClick(); $event.stopPropagation()">
+      <app-icon [name]="isEnrolled ? 'x' : 'plus'" className="icon-sm"></app-icon>
+      {{ isEnrolled ? 'Unenroll' : 'Enroll' }}
+    </button>
+    <button class="btn btn-outline" (click)="toggleDetails(); $event.stopPropagation()">
+      <app-icon name="eye" className="icon-sm"></app-icon>Show Details
+    </button>
+  </div>
+
+  <!-- extra details shown only when expanded -->
+  <div *ngIf="isExpanded" class="card-details">
+    <p>Course ID: {{ course.id }}</p>
+    <p>Status: {{ course.gradeStatus }}</p>
+  </div>
+</div>

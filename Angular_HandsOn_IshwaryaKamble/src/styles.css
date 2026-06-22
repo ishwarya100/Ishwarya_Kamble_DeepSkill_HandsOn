@@ -1,0 +1,306 @@
+/* portal color theme, rose pink, sand, dark lavender */
+:root {
+  --color-rose: #c2447a;
+  --color-rose-dark: #9e3262;
+  --color-rose-light: #f3d9e4;
+  --color-sand: #f6ede1;
+  --color-sand-deep: #ecdfc9;
+  --color-lavender: #5b4b8a;
+  --color-lavender-dark: #463a6c;
+  --color-ink: #3a2f4d;
+  --color-muted: #7a6f8c;
+  --color-white: #fffdfa;
+  --color-border: #e3d4c2;
+  --color-success: #4f7a52;
+  --color-error: #b3354c;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 2px 8px rgba(91, 75, 138, 0.10);
+  --shadow-md: 0 8px 24px rgba(91, 75, 138, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--color-sand);
+  background-image: radial-gradient(circle at 100% 0%, var(--color-rose-light) 0%, transparent 45%);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  letter-spacing: -0.01em;
+  color: var(--color-lavender-dark);
+}
+
+a {
+  color: var(--color-lavender);
+}
+
+.page-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 32px 24px 72px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  margin: 0 0 18px;
+}
+
+.section-title .icon {
+  color: var(--color-rose);
+}
+
+.muted-text {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.error-text {
+  color: var(--color-error);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.success-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #eaf3ea;
+  color: var(--color-success);
+  border: 1px solid #cfe3cf;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.info-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-rose-light);
+  color: var(--color-rose-dark);
+  border: 1px solid var(--color-rose);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  max-width: 460px;
+  margin: 0 auto 18px;
+}
+
+/* shared card surface used across the whole portal */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* reusable button styles shared by every page */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background: var(--color-lavender);
+  color: var(--color-white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-lavender-dark);
+}
+
+.btn-accent {
+  background: var(--color-lavender);
+  color: var(--color-white);
+}
+
+.btn-accent:hover:not(:disabled) {
+  background: var(--color-lavender-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-lavender);
+  border: 1.5px solid var(--color-lavender);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--color-lavender);
+  color: var(--color-white);
+}
+
+.btn-danger-outline {
+  background: transparent;
+  color: var(--color-rose-dark);
+  border: 1.5px solid var(--color-rose);
+}
+
+.btn-danger-outline:hover:not(:disabled) {
+  background: var(--color-rose);
+  color: var(--color-white);
+}
+
+/* form field styling shared across template-driven and reactive forms */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.field-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-lavender-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field-group input[type='text'],
+.field-group input[type='email'],
+.field-group input[type='number'],
+.field-group input[type='password'],
+.field-group select {
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--color-white);
+  color: var(--color-ink);
+  transition: border-color 0.15s ease;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+  outline: none;
+  border-color: var(--color-lavender);
+}
+
+.field-group input.ng-invalid.ng-touched,
+.field-group select.ng-invalid.ng-touched {
+  border-color: var(--color-error);
+}
+
+.field-group input.ng-valid.ng-touched,
+.field-group select.ng-valid.ng-touched {
+  border-color: var(--color-success);
+}
+
+.checkbox-row label {
+  flex-direction: row;
+  align-items: center;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.checkbox-row input[type='checkbox'] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--color-lavender);
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* icon sizing helper, used with inline svg icons throughout the app */
+.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.icon-sm {
+  width: 14px;
+  height: 14px;
+}
+
+.icon-lg {
+  width: 28px;
+  height: 28px;
+}
+
+/* badge pills used on course cards */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge--passed {
+  background: #e6f0e3;
+  color: var(--color-success);
+}
+
+.badge--failed {
+  background: var(--color-rose-light);
+  color: var(--color-rose-dark);
+}
+
+.badge--pending {
+  background: #ece6f4;
+  color: var(--color-lavender);
+}
+
+@media (max-width: 720px) {
+  .page-container {
+    padding: 20px 16px 56px;
+  }
+}

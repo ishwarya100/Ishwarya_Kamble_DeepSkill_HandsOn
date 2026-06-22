@@ -1,0 +1,39 @@
+<h2 class="section-title"><app-icon name="book" className="icon icon-lg"></app-icon>Course Listing</h2>
+
+<!-- shares the same singleton course service instance as the home page -->
+<app-course-summary-widget></app-course-summary-widget>
+
+<!-- search box, updates the url query param on every change -->
+<div class="field-group search-bar">
+  <label><app-icon name="search" className="icon-sm"></app-icon>Search</label>
+  <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" placeholder="Search courses by name" />
+</div>
+
+<!-- loading state shown while the ngrx effect resolves the http call -->
+<p *ngIf="isLoading$ | async" class="muted-text loading-row">
+  <app-icon name="layers" className="icon-sm"></app-icon>Loading courses...
+</p>
+<p *ngIf="error$ | async as err" class="error-text"><app-icon name="warning" className="icon-sm"></app-icon>{{ err }}</p>
+
+<ng-container *ngIf="(filteredCourses$ | async) as courses">
+  <div *ngIf="courses.length > 0; else noCourses" class="course-grid">
+    <app-course-card
+      *ngFor="let course of courses; trackBy: trackByCourseId"
+      [course]="course"
+      (enrollRequested)="onEnroll($event)"
+      (click)="goToDetail(course.id)">
+    </app-course-card>
+  </div>
+</ng-container>
+
+<ng-template #noCourses>
+  <div class="card empty-state">
+    <app-icon name="book" className="icon-lg"></app-icon>
+    <p class="muted-text" *ngIf="searchTerm; else trulyEmpty">No courses match "{{ searchTerm }}".</p>
+    <ng-template #trulyEmpty><p class="muted-text">No courses available.</p></ng-template>
+  </div>
+</ng-template>
+
+<p *ngIf="selectedCourseId" class="success-banner">
+  <app-icon name="check" className="icon-sm"></app-icon>Selected course ID: {{ selectedCourseId }}
+</p>

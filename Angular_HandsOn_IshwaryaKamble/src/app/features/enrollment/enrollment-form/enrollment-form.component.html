@@ -1,0 +1,70 @@
+<h2 class="section-title"><app-icon name="clipboard" className="icon icon-lg"></app-icon>Enrollment Request</h2>
+<p class="muted-text form-subtitle">Template-driven form, validated as you type.</p>
+
+<form #enrollForm="ngForm" (ngSubmit)="onSubmit(enrollForm)" class="card">
+
+  <div class="field-group">
+    <label><app-icon name="user" className="icon-sm"></app-icon>Student Name</label>
+    <input name="studentName" ngModel #nameCtrl="ngModel"
+      required minlength="3" />
+    <span class="error-text" *ngIf="nameCtrl.touched && nameCtrl.errors?.['required']">
+      <app-icon name="warning" className="icon-sm"></app-icon>Name is required
+    </span>
+    <span class="error-text" *ngIf="nameCtrl.touched && nameCtrl.errors?.['minlength']">
+      <app-icon name="warning" className="icon-sm"></app-icon>Name must be at least 3 characters
+    </span>
+  </div>
+
+  <div class="field-group">
+    <label><app-icon name="mail" className="icon-sm"></app-icon>Student Email</label>
+    <input name="studentEmail" ngModel #emailCtrl="ngModel" type="email" required email />
+    <span class="error-text" *ngIf="emailCtrl.touched && emailCtrl.errors?.['required']">
+      <app-icon name="warning" className="icon-sm"></app-icon>Email is required
+    </span>
+    <span class="error-text" *ngIf="emailCtrl.touched && emailCtrl.errors?.['email']">
+      <app-icon name="warning" className="icon-sm"></app-icon>Enter a valid email
+    </span>
+  </div>
+
+  <div class="field-group">
+    <label><app-icon name="book" className="icon-sm"></app-icon>Course ID</label>
+    <input name="courseId" ngModel #courseCtrl="ngModel" type="number" required />
+    <span class="error-text" *ngIf="courseCtrl.touched && courseCtrl.errors?.['required']">
+      <app-icon name="warning" className="icon-sm"></app-icon>Course ID is required
+    </span>
+  </div>
+
+  <div class="field-group">
+    <label><app-icon name="layers" className="icon-sm"></app-icon>Preferred Semester</label>
+    <select name="preferredSemester" ngModel="Odd">
+      <option value="Odd">Odd</option>
+      <option value="Even">Even</option>
+    </select>
+  </div>
+
+  <div class="field-group checkbox-row">
+    <label>
+      <input name="agreeToTerms" ngModel #termsCtrl="ngModel" type="checkbox" required />
+      I agree to the enrollment terms
+    </label>
+    <span class="error-text" *ngIf="termsCtrl.touched && termsCtrl.errors?.['required']">
+      <app-icon name="warning" className="icon-sm"></app-icon>You must agree to continue
+    </span>
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-accent" [disabled]="enrollForm.invalid">
+      <app-icon name="check" className="icon-sm"></app-icon>Submit
+    </button>
+    <button type="button" class="btn btn-outline" (click)="onReset(enrollForm)">
+      <app-icon name="x" className="icon-sm"></app-icon>Reset
+    </button>
+  </div>
+
+  <div class="success-banner" *ngIf="submitted">
+    <app-icon name="check" className="icon-sm"></app-icon>You are now enrolled in this course!
+  </div>
+  <p class="error-text" *ngIf="courseNotFound">
+    <app-icon name="warning" className="icon-sm"></app-icon>No course exists with that ID.
+  </p>
+</form>

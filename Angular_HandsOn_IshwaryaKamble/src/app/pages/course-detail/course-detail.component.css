@@ -1,0 +1,28 @@
+.detail-card {
+  max-width: 520px;
+}
+
+.detail-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--color-rose-light);
+  color: var(--color-rose-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.detail-card p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-ink);
+}
+
+.detail-card a {
+  display: inline-flex;
+  margin-top: 14px;
+  text-decoration: none;
+}

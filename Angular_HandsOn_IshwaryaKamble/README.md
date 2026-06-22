@@ -1,4 +1,4 @@
-# Student Course Portal
+# Student Course Portal 🎓
 
 A complete Angular 20 single page application for a college course portal — built incrementally across 10 hands-on modules covering components, forms, services, routing, HTTP, NgRx state management, and unit testing.
 

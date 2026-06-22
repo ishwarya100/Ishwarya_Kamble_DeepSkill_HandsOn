@@ -1,4 +1,4 @@
-# Student Course Portal — Project Notes
+# Student Course Portal — Project Notes 
 
 ## 1. What This Project Is
 

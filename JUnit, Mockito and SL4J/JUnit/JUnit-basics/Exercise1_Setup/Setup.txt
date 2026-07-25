@@ -1,0 +1,18 @@
+Steps to follow:
+
+1. Created a new Java project in the IDE.
+2. Added the JUnit dependency in pom.xml (Maven).
+3. Created a test class in the project.
+
+pom.xml dependency
+
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+</dependency>
+
+Once this dependency is added and the project is built, JUnit test classes
+placed under src/test/java can be run using the IDE test runner or Maven
+(mvn test).

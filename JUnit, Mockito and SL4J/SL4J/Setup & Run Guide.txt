@@ -1,0 +1,53 @@
+SLF4J-Logging
+
+error and warning levels,
+parameterized logging, and using different appenders.
+
+Project Structure
+
+SLF4J-Logging/
+│
+├── README.md
+├── pom.xml
+│
+└── src
+    └── main
+        ├── java/com/example/logging
+        │     LoggingExample.java
+        │     ParameterizedLoggingExample.java
+        │     AppenderExample.java
+        │
+        └── resources
+              logback.xml
+
+What each class covers
+
+-  LoggingExample – Exercise 1: logs an error message and a warning message.
+-  ParameterizedLoggingExample – Exercise 2: logs messages using {}
+   placeholders instead of string concatenation.
+-  AppenderExample – Exercise 3: logs info, warning, and error messages that
+   are written to both the console and `app.log`, based on the appenders
+   configured in `logback.xml`.
+
+Setup
+
+Requirements:
+- JDK 17 or higher
+- Maven 3.8 or higher
+
+Move into the project folder:
+
+cd SLF4J-Logging
+
+Build
+
+mvn compile
+
+Run a specific exercise
+
+mvn exec:java -Dexec.mainClass="com.example.logging.LoggingExample"
+mvn exec:java -Dexec.mainClass="com.example.logging.ParameterizedLoggingExample"
+mvn exec:java -Dexec.mainClass="com.example.logging.AppenderExample"
+
+After running `AppenderExample`, check the project root for `app.log` to see
+the file appender output alongside the console output.

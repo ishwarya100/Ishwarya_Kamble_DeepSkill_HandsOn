@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          # serves config files bundled inside this server's own classpath,
+          # no external git repo needed
+          search-locations: classpath:/config

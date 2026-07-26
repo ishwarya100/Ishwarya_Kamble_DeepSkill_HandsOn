@@ -1,0 +1,36 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      # built-in local in-memory response cache (per-route TTL set below)
+      filter:
+        local-response-cache:
+          enabled: true
+          time-to-live: 30s
+      routes:
+        - id: customer-route
+          uri: http://localhost:8085
+          predicates:
+            - Path=/customer/**
+          filters:
+            - RewritePath=/customer/(?<segment>.*), /customers/${segment}
+            - name: SimpleRateLimiter
+              args:
+                limit: 5
+                windowSeconds: 10
+            - LocalResponseCache
+        - id: billing-route
+          uri: http://localhost:8086
+          predicates:
+            - Path=/billing/**
+          filters:
+            - RewritePath=/billing/(?<segment>.*), /bills/${segment}
+            - name: SimpleRateLimiter
+              args:
+                limit: 5
+                windowSeconds: 10
+            - LocalResponseCache

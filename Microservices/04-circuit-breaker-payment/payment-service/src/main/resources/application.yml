@@ -1,0 +1,25 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: payment-service
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      thirdPartyApi:
+        register-health-indicator: true
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers
+  endpoint:
+    health:
+      show-details: always

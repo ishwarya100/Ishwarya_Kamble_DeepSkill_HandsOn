@@ -1,0 +1,11 @@
+server:
+  port: 8098
+
+spring:
+  application:
+    name: jwt-auth-service
+
+jwt:
+  # demo secret only - use a securely generated, externally-stored key in production
+  secret: demo-super-secret-key-change-me-please-1234567890
+  expiration-ms: 3600000

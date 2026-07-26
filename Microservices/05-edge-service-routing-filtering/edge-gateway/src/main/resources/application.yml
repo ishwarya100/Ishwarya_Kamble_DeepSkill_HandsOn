@@ -1,0 +1,13 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: edge-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: example_route
+          uri: http://localhost:8090
+          predicates:
+            - Path=/example/**

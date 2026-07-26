@@ -1,0 +1,27 @@
+server:
+  port: 9094
+
+spring:
+  application:
+    name: resilient-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: downstream_route
+          uri: http://localhost:8095
+          predicates:
+            - Path=/downstream/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: exampleCircuitBreaker
+                fallbackUri: forward:/fallback
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      exampleCircuitBreaker:
+        register-health-indicator: true
+        sliding-window-size: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s

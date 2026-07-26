@@ -1,0 +1,12 @@
+server:
+  port: 8097
+
+spring:
+  application:
+    name: resource-server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # replace with your Authorization Server's real issuer URI
+          issuer-uri: https://issuer.example.com

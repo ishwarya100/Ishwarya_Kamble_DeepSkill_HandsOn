@@ -1,0 +1,18 @@
+server:
+  port: 9093
+
+spring:
+  application:
+    name: lb-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: load_balanced_route
+          uri: lb://example-service
+          predicates:
+            - Path=/loadbalanced/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

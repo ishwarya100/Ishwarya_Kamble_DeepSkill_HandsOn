@@ -1,0 +1,23 @@
+server:
+  port: 8096
+
+spring:
+  application:
+    name: oauth-client-app
+  security:
+    oauth2:
+      client:
+        registration:
+          my-client:
+            # replace with a real OIDC provider's client-id/secret to actually log in
+            client-id: YOUR_CLIENT_ID
+            client-secret: YOUR_CLIENT_SECRET
+            scope: openid, profile, email
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          my-client:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
+            user-name-attribute: sub

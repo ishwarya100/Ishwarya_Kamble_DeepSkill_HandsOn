@@ -1,4 +1,4 @@
-# React JS Hands-On Labs - Answer Sheet
+# React JS Hands-On
 
 This folder contains the completed solution for all 19 React hands-on labs.
 Each lab is a separate, independent React application built with

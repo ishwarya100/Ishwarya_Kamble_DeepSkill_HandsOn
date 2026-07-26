@@ -1,0 +1,134 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+  padding: 40px;
+}
+
+/* Main Container */
+#root > div {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #1565c0;
+  margin-bottom: 25px;
+}
+
+/* Toggle Theme Button */
+#root > div > button {
+  display: block;
+  margin: 0 auto 30px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #1565c0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#root > div > button:hover {
+  background: #0d47a1;
+}
+
+/* Employee List */
+#root > div > div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ---------------- LIGHT THEME ---------------- */
+
+.card-light {
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.card-light:hover {
+  transform: translateY(-5px);
+}
+
+.card-light p:first-child {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1565c0;
+}
+
+.card-light p:nth-child(2) {
+  color: #555;
+  margin: 12px 0;
+}
+
+.btn-light {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #1565c0;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-light:hover {
+  background: #0d47a1;
+}
+
+/* ---------------- DARK THEME ---------------- */
+
+.card-dark {
+  width: 250px;
+  background: #2d2d2d;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  transition: 0.3s;
+}
+
+.card-dark:hover {
+  transform: translateY(-5px);
+}
+
+.card-dark p:first-child {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.card-dark p:nth-child(2) {
+  margin: 12px 0;
+  color: #ddd;
+}
+
+.btn-dark {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #ff9800;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-dark:hover {
+  background: #f57c00;
+}

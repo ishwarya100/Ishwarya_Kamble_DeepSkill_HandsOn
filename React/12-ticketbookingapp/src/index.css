@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eef3f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 80%;
+  max-width: 700px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  text-align: center;
+  color: #1565c0;
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 22px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 6px;
+  background: #1565c0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0d47a1;
+}
+
+.status {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.online {
+  color: green;
+  font-weight: bold;
+}
+
+.offline {
+  color: red;
+  font-weight: bold;
+}
+
+.flight-card {
+  background: #f8fbff;
+  border-left: 6px solid #1565c0;
+  padding: 18px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.flight-card h3 {
+  color: #1565c0;
+  margin-bottom: 10px;
+}
+
+.flight-card p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.available {
+  color: green;
+  font-weight: bold;
+}
+
+.message {
+  text-align: center;
+  color: red;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.book-btn {
+  background: #2e7d32;
+  margin-top: 10px;
+}
+
+.book-btn:hover {
+  background: #1b5e20;
+}

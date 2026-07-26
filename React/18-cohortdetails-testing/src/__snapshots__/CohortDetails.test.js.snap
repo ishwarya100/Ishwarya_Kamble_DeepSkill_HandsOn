@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cohort Details Component should always render same html 1`] = `
+<CohortDetails
+  cohort={
+    Object {
+      "code": "COH-101",
+      "id": 1,
+      "startDate": "2026-01-05",
+      "status": "ongoing",
+      "trainer": "Anita Sharma",
+    }
+  }
+>
+  <div
+    className="box"
+  >
+    <h3
+      style={
+        Object {
+          "color": "green",
+        }
+      }
+    >
+      COH-101
+    </h3>
+    <dl>
+      <dt>
+        Trainer
+      </dt>
+      <dd>
+        Anita Sharma
+      </dd>
+      <dt>
+        Status
+      </dt>
+      <dd>
+        ongoing
+      </dd>
+      <dt>
+        Start Date
+      </dt>
+      <dd>
+        2026-01-05
+      </dd>
+    </dl>
+  </div>
+</CohortDetails>
+`;

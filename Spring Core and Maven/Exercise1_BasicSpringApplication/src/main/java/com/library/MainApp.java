@@ -1,0 +1,20 @@
+package com.library;
+
+import com.library.repository.BookRepository;
+import com.library.service.BookService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+
+    public static void main(String[] args) {
+        // Load the Spring application context from XML configuration
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        BookService bookService = context.getBean("bookService", BookService.class);
+        BookRepository bookRepository = context.getBean("bookRepository", BookRepository.class);
+
+        System.out.println(bookService.getBookDetails(101));
+        System.out.println(bookRepository.findBookById(101));
+    }
+}

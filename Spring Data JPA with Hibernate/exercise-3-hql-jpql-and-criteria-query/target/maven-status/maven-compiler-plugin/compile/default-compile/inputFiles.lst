@@ -1,0 +1,16 @@
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\demo\HqlDemo.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\demo\QuizDemo.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\Department.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\Employee.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\quiz\AppUser.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\quiz\Attempt.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\quiz\AttemptOption.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\quiz\AttemptQuestion.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\quiz\Option.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\quiz\Question.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\model\Skill.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\OrmLearnApplication.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\repository\EmployeeRepository.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\repository\quiz\AttemptRepository.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\service\EmployeeService.java
+C:\Users\user\OneDrive\Desktop\COGNIZANT\Deep Skilling\Spring Data JPA with Hibernate\exercise-3-hql-jpql-and-criteria-query\src\main\java\com\cognizant\ormlearn\service\quiz\AttemptService.java

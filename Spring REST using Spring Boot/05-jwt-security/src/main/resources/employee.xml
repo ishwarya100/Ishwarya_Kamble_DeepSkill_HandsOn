@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- allows dd/MM/yyyy strings to be wired directly into java.util.Date properties -->
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="java.util.Date">
+                    <bean class="org.springframework.beans.propertyeditors.CustomDateEditor">
+                        <constructor-arg>
+                            <bean class="java.text.SimpleDateFormat">
+                                <constructor-arg value="dd/MM/yyyy" />
+                            </bean>
+                        </constructor-arg>
+                        <constructor-arg value="true" />
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="engineering" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="1" />
+        <property name="name" value="Engineering" />
+    </bean>
+
+    <bean id="humanResources" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="2" />
+        <property name="name" value="Human Resources" />
+    </bean>
+
+    <bean id="departmentList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="engineering" />
+                <ref bean="humanResources" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="java" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="1" />
+        <property name="name" value="Java" />
+    </bean>
+
+    <bean id="angular" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="2" />
+        <property name="name" value="Angular" />
+    </bean>
+
+    <bean id="communication" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="3" />
+        <property name="name" value="Communication" />
+    </bean>
+
+    <bean id="recruitment" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="4" />
+        <property name="name" value="Recruitment" />
+    </bean>
+
+    <bean id="employee1" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="1" />
+        <property name="name" value="Ravi Kumar" />
+        <property name="salary" value="55000" />
+        <property name="permanent" value="true" />
+        <property name="dateOfBirth" value="12/05/1990" />
+        <property name="department" ref="engineering" />
+        <property name="skills">
+            <list>
+                <ref bean="java" />
+                <ref bean="angular" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employee2" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="2" />
+        <property name="name" value="Anita Sharma" />
+        <property name="salary" value="62000" />
+        <property name="permanent" value="true" />
+        <property name="dateOfBirth" value="24/09/1988" />
+        <property name="department" ref="engineering" />
+        <property name="skills">
+            <list>
+                <ref bean="java" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employee3" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="3" />
+        <property name="name" value="Meera Nair" />
+        <property name="salary" value="48000" />
+        <property name="permanent" value="false" />
+        <property name="dateOfBirth" value="03/01/1995" />
+        <property name="department" ref="humanResources" />
+        <property name="skills">
+            <list>
+                <ref bean="communication" />
+                <ref bean="recruitment" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employee4" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="4" />
+        <property name="name" value="Suresh Iyer" />
+        <property name="salary" value="71000" />
+        <property name="permanent" value="true" />
+        <property name="dateOfBirth" value="18/11/1985" />
+        <property name="department" ref="humanResources" />
+        <property name="skills">
+            <list>
+                <ref bean="recruitment" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employeeList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="employee1" />
+                <ref bean="employee2" />
+                <ref bean="employee3" />
+                <ref bean="employee4" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
